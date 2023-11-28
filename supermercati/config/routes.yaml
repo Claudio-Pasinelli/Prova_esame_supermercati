@@ -1,4 +1,33 @@
-controllers:
-    resource: ../src/Controller/
-    type: attribute
-# salve
+# controllers:
+#     resource: ../src/Controller/
+#     type: attribute
+
+cart:
+    path: /cart
+    controller: App\Controller\CartController::getCart
+
+delete:
+    path: /delete
+    controller: App\Controller\DeleteShoppingController::deleteOrder
+
+orderlist:
+    path: /orderlist
+    controller: App\Controller\OrderListController::getOrders
+
+login:
+    path: /login
+    controller: App\Controller\LoginController::getLogin
+
+home:
+    path: /home
+    controller: App\Controller\MainPageController::getHome
+
+market:
+    path: /market
+    controller: App\Controller\MarketController::getMarket
+
+receipt:
+    path: /receipt
+    controller: App\Controller\MarketController::getReceipt
+
+
