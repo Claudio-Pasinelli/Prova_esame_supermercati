@@ -10,9 +10,9 @@ delete:
     path: /delete
     controller: App\Controller\DeleteShoppingController::deleteOrder
 
-orderlist:
-    path: /orderlist
-    controller: App\Controller\OrderListController::getOrders
+prenotationlist:
+    path: /prenotationlist
+    controller: App\Controller\PrenotationListController::getOrders
 
 login:
     path: /login
