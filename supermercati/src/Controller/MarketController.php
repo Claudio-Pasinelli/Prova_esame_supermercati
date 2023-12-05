@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class MarketController extends AbstractController
 {
-
     private $productService;
 
     public function __contruct(ProductService $productServiceInput)
