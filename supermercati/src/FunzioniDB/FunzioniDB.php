@@ -140,17 +140,6 @@
             return $rows;
         }
 
-        //funzione che seleziona una determinata babysitter
-        public function selectMarket($connessione, $close = true)
-        {
-            // $sql = "SELECT nome, cognome, dataDiNascita, provincia, citta FROM pers"one WHERE nome = '$nome'";
-            $sql = "SELECT id_prenotazione, nome, cognome, num_telefono, orario
-            FROM prenotazione
-            WHERE id = '$id'";
-
-            return FunzioniDb::selectQuery($connessione, $sql, $close);
-        }
-
         //funzione che esegue l'sql per l'update
         public function updateQuery($connessione, $sql, $close)
         {
