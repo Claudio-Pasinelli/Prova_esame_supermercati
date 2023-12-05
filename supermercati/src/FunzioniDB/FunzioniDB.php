@@ -2,7 +2,7 @@
 
     namespace App\FunzioniDB;
 
-    class FunzioniDb
+    class FunzioniDB
     {
         //funzione che apre la connessione col database
         public function openConnection($dbName = "firstphp")
