@@ -18,7 +18,7 @@ class MarketService
     public function getData()
     {
         // Apre la connessione al database utilizzando il servizio FunzioniDB
-        $connection = $this->marketService->openConnection("NOMEDB");
+        $connection = $this->marketService->openConnection("supermercati");
 
         // Esegue la query per selezionare tutti i market utilizzando il servizio FunzioniDB
         $arrayMarkets = $this->marketService->selectMarket($connection, false);
