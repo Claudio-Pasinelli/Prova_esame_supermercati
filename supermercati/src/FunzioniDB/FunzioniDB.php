@@ -2,7 +2,7 @@
 
     namespace App\FunzioniDB;
 
-    class FunzioniDb
+    class FunzioniDB
     {
         //funzione che apre la connessione col database
         public function openConnection($dbName = "firstphp")
@@ -33,7 +33,7 @@
             $email = $entity->getEmail();
 
             $sql = "INSERT INTO supermercati.clienti (codiceFiscale, nome, cognome, email) VALUES ('$codiceFiscale','$nome', '$cognome', '$email');";
-            return FunzioniDb::eseguiSql($connessione, $sql, $close);
+            return FunzioniDB::eseguiSql($connessione, $sql, $close);
         }
 
         public function inserisciPrenotazione($connessione, $entity, $close = true)
@@ -45,7 +45,7 @@
             $idSupermercato = $etity->getIdSupermercato();
 
             $sql = "INSERT INTO supermercati.prenotazioni (codice, costo, annullata, idProdotto, idSupermercato) VALUES ('$codice','$costo', '$annullata', '$idProdotto', '$idSupermercato');";
-            return FunzioniDb::eseguiSql($connessione, $sql, $close);
+            return FunzioniDB::eseguiSql($connessione, $sql, $close);
         }
 
         public function inserisciProdotto($connessione, $entity, $close = true)
@@ -55,7 +55,7 @@
             $prezzo = $entity->getPrezzo();
 
             $sql = "INSERT INTO supermercati.prodotti (codice, descrizione, prezzo) VALUES ('$codice','$descrizione', '$prezzo');";
-            return FunzioniDb::eseguiSql($connessione, $sql, $close);
+            return FunzioniDB::eseguiSql($connessione, $sql, $close);
         }
 
         public function inserisciMarket($connessione, $entity, $close = true)
@@ -66,12 +66,34 @@
             $tipologia = $entty->getTipologia();
 
             $sql = "INSERT INTO supermercati.supermercati (id, denominazione, indirizzo, tipologia) VALUES ('$id','$denominazione', '$indirizzo', '$tipologia');";
-            return FunzioniDb::eseguiSql($connessione, $sql, $close);
+            return FunzioniDB::eseguiSql($connessione, $sql, $close);
         }
 
         
 
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //FUNZIONI DI SELECT---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        
+
+        //ritorna la lista di TUTTI i supermercati
+        public function selectMarkets($connessione, $close = true)
+        {
+            $sql = "SELECT id, denominazione, indirizzo, tipologia
+            FROM supermercati";
+
+            return FunzioniDB::selectQuery($connessione, $sql, $close);
+
+        }
+        //ritorna UN supermercato specifico per ID
+        public function selectMarket($connessione, $close = true)
+        {
+            $sql = "SELECT id, denominazione, indirizzo, tipologia
+            FROM supermercati
+            WHERE id = '$id'";
+
+            return FunzioniDB::selectQuery($connessione, $sql, $close);
+
+        }
+        
         //funzione che esegue una query, di dafault chiude la connessione e restituisce un booleano in base al risultato
         public function eseguiSql($connessione, $sql, $close = true)
         {
@@ -119,11 +141,12 @@
         }
 
         //funzione che seleziona una determinata babysitter
-        public function selectprenotazione($connessione, $close = true)
+        public function selectMarket($connessione, $close = true)
         {
             // $sql = "SELECT nome, cognome, dataDiNascita, provincia, citta FROM pers"one WHERE nome = '$nome'";
             $sql = "SELECT id_prenotazione, nome, cognome, num_telefono, orario
-            FROM prenotazione";
+            FROM prenotazione
+            WHERE id = '$id'";
 
             return FunzioniDb::selectQuery($connessione, $sql, $close);
         }
