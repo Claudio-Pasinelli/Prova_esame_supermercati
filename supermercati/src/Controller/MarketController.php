@@ -1,10 +1,11 @@
 <?php
 namespace App\Controller;
 
-use App\Service\MarketService;
 use App\Service\ProductService;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class MarketController
+
+class MarketController extends AbstractController
 {
 
     private $productService;
