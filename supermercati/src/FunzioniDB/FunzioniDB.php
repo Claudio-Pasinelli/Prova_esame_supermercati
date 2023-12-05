@@ -9,7 +9,7 @@
         {
             $host = "127.0.0.1";
             $username = "root";
-            $password = "";            
+            $password = "G1gant3Bu3n0.";            
             $connessione = mysqli_connect($host, $username, $password, $dbName);
             
             if(false === $connessione)
@@ -42,7 +42,7 @@
             $costo = $entity->getCosto();
             $annullata = $entity->getAnnullata();
             $idProdotto = $entity->getIdProdotto();
-            $idSupermercato = $etity->getIdSupermercato();
+            $idSupermercato = $entity->getIdSupermercato();
 
             $sql = "INSERT INTO supermercati.prenotazioni (codice, costo, annullata, idProdotto, idSupermercato) VALUES ('$codice','$costo', '$annullata', '$idProdotto', '$idSupermercato');";
             return FunzioniDB::eseguiSql($connessione, $sql, $close);
@@ -63,7 +63,7 @@
             $id = $entity->getId();
             $denominazione = $entity->getDenominazione();
             $indirizzo = $entity->getIdirizzo();
-            $tipologia = $entty->getTipologia();
+            $tipologia = $entity->getTipologia();
 
             $sql = "INSERT INTO supermercati.supermercati (id, denominazione, indirizzo, tipologia) VALUES ('$id','$denominazione', '$indirizzo', '$tipologia');";
             return FunzioniDB::eseguiSql($connessione, $sql, $close);

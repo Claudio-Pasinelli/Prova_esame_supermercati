@@ -18,7 +18,7 @@ class ProductService
     public function getData()
     {
         // Apre la connessione al database utilizzando il servizio FunzioniDB
-        $connection = $this->productService->openConnection("NOMEDB");
+        $connection = $this->productService->openConnection("supermercati");
 
         // Esegue la query per selezionare tutti i prodotti utilizzando il servizio FunzioniDB
         $arrayProducts = $this->productService->selectProduct($connection, false);
