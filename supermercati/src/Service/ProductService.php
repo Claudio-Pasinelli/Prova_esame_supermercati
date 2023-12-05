@@ -21,7 +21,7 @@ class ProductService
         $connection = $this->productService->openConnection("NOMEDB");
 
         // Esegue la query per selezionare tutti i prodotti utilizzando il servizio FunzioniDB
-        $arrayProducts = $this->productService->selectMarket($connection, false);
+        $arrayProducts = $this->productService->selectProduct($connection, false);
         
         // Parametri da restituire, contenenti l'array di prodotti
         $params = [
