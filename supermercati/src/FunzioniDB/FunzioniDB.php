@@ -84,7 +84,7 @@
 
         }
         //ritorna UN supermercato specifico per ID
-        public function selectMarket($connessione, $close = true)
+        public function selectMarket($connessione, $close = true, $id)
         {
             $sql = "SELECT id, denominazione, indirizzo, tipologia
             FROM supermercati
