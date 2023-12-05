@@ -1,16 +1,23 @@
 <?php
 namespace App\Controller;
-use App\Service\MarketService;
 
-class MarketController{
+use App\Service\ProductService;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-private $marketService;
 
-public function __contruct(MarketService $marketServiceInput){
-    $this->marketService = $marketServiceInput;
-}
+class MarketController extends AbstractController
+{
+    private $productService;
 
-public function getMarket()
+    public function __contruct(ProductService $productServiceInput)
+    {
+        $this->productService = $productServiceInput;
+    }
+
+    public function getMarket()
+    {
+        return $this->render('market.html.twig', $this->productService->getData());
+    }
 
 }
 
