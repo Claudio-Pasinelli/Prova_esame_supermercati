@@ -68,12 +68,8 @@
             $sql = "INSERT INTO supermercati.supermercati (id, denominazione, indirizzo, tipologia) VALUES ('$id','$denominazione', '$indirizzo', '$tipologia');";
             return FunzioniDB::eseguiSql($connessione, $sql, $close);
         }
-
-        
-
         //FUNZIONI DI SELECT---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         
-
         //ritorna la lista di TUTTI i supermercati
         public function selectMarkets($connessione, $close = true)
         {
@@ -93,7 +89,7 @@
             return FunzioniDB::selectQuery($connessione, $sql, $close);
 
         }
-        
+        //-----------------------------------------------------------------------------------
         //funzione che esegue una query, di dafault chiude la connessione e restituisce un booleano in base al risultato
         public function eseguiSql($connessione, $sql, $close = true)
         {
