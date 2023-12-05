@@ -4,7 +4,7 @@ namespace App\Controller;
 use App\Service\PrenotationService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class MarketController extends AbstractController
+class PrenotationListController extends AbstractController
 {
     private $prenotationService;
 
