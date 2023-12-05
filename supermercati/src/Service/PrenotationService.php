@@ -18,7 +18,7 @@ class PrenotationService
     public function getData()
     {
         // Apre la connessione al database utilizzando il servizio FunzioniDB
-        $connection = $this->prenotationService->openConnection("NOMEDB");
+        $connection = $this->prenotationService->openConnection("supermercati");
 
         // Esegue la query per selezionare tutte le prenotazioni utilizzando il servizio FunzioniDB
         $arrayPrenotazioni = $this->prenotationService->selectPrenotation($connection, false);
