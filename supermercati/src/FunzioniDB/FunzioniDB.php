@@ -61,10 +61,11 @@
         public function inserisciMarket($connessione, $entity, $close = true)
         {
             $id = $entity->getId();
-            $descdenominazione = $entity->getDenominazione();
+            $denominazione = $entity->getDenominazione();
             $indirizzo = $entity->getIdirizzo();
+            $tipologia = $entty->getTipologia();
 
-            $sql = "INSERT INTO supermercati.prodotti (codice, descrizione, prezzo) VALUES ('$codice','$descrizione', '$prezzo');";
+            $sql = "INSERT INTO supermercati.supermercati (id, denominazione, indirizzo, tipologia) VALUES ('$id','$denominazione', '$indirizzo', '$tipologia');";
             return FunzioniDb::eseguiSql($connessione, $sql, $close);
         }
 
