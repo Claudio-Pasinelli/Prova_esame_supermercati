@@ -9,7 +9,7 @@
         {
             $host = "127.0.0.1";
             $username = "root";
-            $password = "G1gant3Bu3n0.";            
+            $password = "";            
             $connessione = mysqli_connect($host, $username, $password, $dbName);
             
             if(false === $connessione)
