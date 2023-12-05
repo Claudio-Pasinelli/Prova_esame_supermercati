@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista Prenotazioni</title>
+</head>
+<body>
+    <h1>Lista Prenotazioni</h1>     
+    <table>
+        <thead>
+            <th></th>
+        </thead>
+        {% for prenotazione in arrayPrenotazioni %}
+            <tr>
+                <td>{{ prenotazione.codice }}</td>
+                <td>{{ prenotazione.costo }}</td>
+                <td><a href="{{ path('delete', {'codice': prenotazione.codice}) }}"> Annulla Prenotazione </a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
