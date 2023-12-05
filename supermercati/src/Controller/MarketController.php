@@ -1,16 +1,23 @@
 <?php
 namespace App\Controller;
+
 use App\Service\MarketService;
+use App\Service\ProductService;
 
-class MarketController{
+class MarketController
+{
 
-private $marketService;
+    private $productService;
 
-public function __contruct(MarketService $marketServiceInput){
-    $this->marketService = $marketServiceInput;
-}
+    public function __contruct(ProductService $productServiceInput)
+    {
+        $this->productService = $productServiceInput;
+    }
 
-public function getMarket()
+    public function getMarket()
+    {
+        return $this->render('market.html.twig', $this->productService->getData());
+    }
 
 }
 
