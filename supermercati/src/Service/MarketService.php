@@ -21,7 +21,7 @@ class MarketService
         $connection = $this->marketService->openConnection("supermercati");
 
         // Esegue la query per selezionare tutti i market utilizzando il servizio FunzioniDB
-        $arrayMarkets = $this->marketService->selectMarket($connection, false);
+        $arrayMarkets = $this->marketService->selectMarket($connection, false, $id);
         
         // Parametri da restituire, contenenti l'array di market
         $params = [
