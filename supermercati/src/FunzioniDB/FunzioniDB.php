@@ -5,11 +5,11 @@
     class FunzioniDB
     {
         //funzione che apre la connessione col database
-        public function openConnection($dbName = "firstphp")
+        public function openConnection($dbName = "supermercati")
         {
             $host = "127.0.0.1";
             $username = "root";
-            $password = "Matte_012";            
+            $password = "";            
             $connessione = mysqli_connect($host, $username, $password, $dbName);
             
             if(false === $connessione)
