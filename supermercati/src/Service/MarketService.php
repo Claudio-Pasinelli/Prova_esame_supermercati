@@ -14,16 +14,16 @@ class MarketService
         $this->marketService = $funzioniDBService;
     }
 
-    // Metodo che ottiene i dati per la visualizzazione dei libri
+    // Metodo che ottiene i dati per la visualizzazione dei market
     public function getData()
     {
         // Apre la connessione al database utilizzando il servizio FunzioniDB
-        $connection = $this->marketService->openConnection("NOEMDB");
+        $connection = $this->marketService->openConnection("NOMEDB");
 
-        // Esegue la query per selezionare tutti i libri utilizzando il servizio FunzioniDB
+        // Esegue la query per selezionare tutti i market utilizzando il servizio FunzioniDB
         $arrayMarkets = $this->marketService->selectMarket($connection, false);
         
-        // Parametri da restituire, contenenti l'array di libri
+        // Parametri da restituire, contenenti l'array di market
         $params = [
             'arrayMarkets' => $arrayMarkets,
         ];
